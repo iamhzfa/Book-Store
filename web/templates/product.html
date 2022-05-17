@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Product
+{% endblock %}
+
+{% block content %}
+<head>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<div class="container mt-5 mb-5">
+    <div class="card">
+        {% for item in data %}
+            
+        <div class="row g-0">
+            <div class="col-md-6 border-end">
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="main_image"> <img src="\static\img\sellerImg\{{item[10]}}" id="main_product_image"
+                            width="350"> </div>
+                    <div class="thumbnail_images">
+                        <ul id="thumbnail">
+                            <li><img onmouseover="changeImage(this)" src="\static\img\sellerImg\{{item[10]}}" width="70"></li>
+                            <li><img onmouseover="changeImage(this)" src="static/img/blue.png" width="70"></li>
+                            <li><img onmouseover="changeImage(this)" src="static/img/red.png" width="70"></li>
+                            <li><img onmouseover="changeImage(this)" src="static/img/black.png" width="70"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 right-side">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3>{{item[1]}}</h3> <span class="heart"><i class='bx bx-heart'></i></span>
+                    </div>
+                    <div class="mt-2 pr-3 content mb-3">
+                        <p class="mb-2">Book Published By {{item[6]}}</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    </div>
+                    <h3>{{item[5]}} ₹</h3>
+                    <div class="ratings d-flex flex-row align-items-center mt-3">
+                        <div class="d-flex flex-row"> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i
+                                class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bx-star'></i> </div>
+                        <span>441 reviews</span>
+                    </div>
+                    <div class="mt-5"> <span class="fw-bold">Color</span>
+                        <div class="colors">
+                            <ul id="marker">
+                                <li id="marker-1"></li>
+                                <li id="marker-2"></li>
+                                <li id="marker-3"></li>
+                                <li id="marker-4"></li>
+                                <li id="marker-5"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="buttons d-flex flex-row mt-5 gap-3">     
+                        <button class="text-white hover:text-purple-900 border-2 border-white hover:border-purple-900 bg-gradient-to-br from-purple-900 to-purple-400 hover:bg-white focus:ring-none focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">Buy Now</button>
+                        <button class="text-purple-900 hover:text-white border-2 border-purple-900 hover:bg-gradient-to-br from-purple-900 to-purple-400 hover:border-white focus:ring-none focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center mr-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">Add to Basket</button>
+                    </div>
+                    <div class="search-option bg-gradient-to-br from-purple-900 to-purple-400"> <i class='bx bx-search-alt-2 first-search'></i>
+                        <div class="inputs"> <input type="text" name=""> </div> <i class='bx bx-share-alt share'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+    </div>
+</div>
+
+<script src="static/script.js"></script>
+
+{% endblock %}

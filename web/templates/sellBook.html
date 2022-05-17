@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %}
+SELL BOOKS
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container my-4">
+    <p class="pf">Hello and Welcome.</p>
+    <p class="ps">Let's Add a Book</p>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-6 col-xl-5 mx-auto">
+            <div class="card px-5 pt-4 d-flex justify-content-center">
+                <form class="mydetails" method="POST" action="" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+
+                    <div class="form-group">
+                        {{ form.streamName(class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                        border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        placeholder="Choose Stream") }}
+
+                        <!-- <select
+                            class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            id="streamSelect" size="1">
+                            <option value="" disabled selected>Choose Stream
+                            <option>Science</option>
+                            <option>Commerce</option>
+                            <option>Arts</option>
+                        </select> -->
+
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        {{ form.bookName(class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                        border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        placeholder="Book Name") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.subjectName(class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                        border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        placeholder="Subject Name") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.className(class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                        border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        placeholder="Class") }}
+
+                        {{ form.mfgYear(class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                        border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        placeholder="Manufacturing Year") }}
+
+                        {{ form.sellingAmount(class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                        border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        placeholder="Selling Amount") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.publicationName(class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                        border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        placeholder="Enter Publication Name") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.quantity(class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                        border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        placeholder="Enter Quatity (E.g - 1, 2, 3, 4, ....)") }}
+                    </div>
+                    <!-- <div class="form-group"> -->
+                 
+
+
+                        <div class="flex justify-center">
+                            <div class="mb-3 w-96">
+                              <!-- <label for="formFile" class="form-label inline-block mb-2 text-gray-700">Default file input example</label>
+                              <input class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 :bg-white focus:border-blue-600 focus:outline-none" type="file" id="formFile"> -->
+                              <label for="full-name" class="leading-7 text-sm text-gray-600 font-bold"> {{ form.bookImage.label() }} (jpg & png only) </label>
+                              {{ form.bookImage(class="w-3/4", placeholder= "Upload Image here")}}
+                            </div>
+                          </div>
+                    <!-- </div> -->
+
+                    <div class="form-group pt-3 ">
+                        {{ form.submit(class="w-full btn btn-primary btn-block") }}
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+SIGN IN
+{% endblock %}
+
+{% block content %}
+<!-- component -->
+<div class="p-20 h-screen w-screen flex flex-col-reverse md:flex-row items-center justify-center bg-gray-50">
+    <div class="content text-3xl text-center md:text-left">
+        <h1 class="text-5xl text-blue-500 font-bold ">Book Store</h1>
+        <p class="mr-6">Buy and sell you old and new books.</p>
+    </div>
+    <form class="shadow-lg w-80 p-4 flex flex-col bg-white rounded-lg" action="" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.username(class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white", placeholder="Your Username") }}
+        <!-- <input type="text" placeholder="Username"
+            class="mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-cyan-500" /> -->
+        {{ form.password(class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white", placeholder="Your Password") }}
+        <!-- <input type="text" placeholder="Pasword"
+            class="mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-cyan-500" /> -->
+            
+        {{ form.submit(class="w-full bg-green-400 text-white p-3 rounded-lg font-semibold text-lg") }}
+        <!-- <button class="w-full bg-blue-500 text-white p-3 rounded-lg font-semibold text-lg">Login</button> -->
+        <a class="text-blue-400 text-center my-2 disabled">Forgot Pasword?</a>
+
+        <hr />
+        <button class="w-full btn-signin bg-blue-400 mt-4 mb-4 text-white p-3 rounded-lg font-semibold text-lg" >
+            <a href="{{ url_for('register' ) }}" style="color:white ; ">Create New Account
+            </a>
+        </button>
+    </form>
+</div>
+</div>
+
+
+{% endblock %}

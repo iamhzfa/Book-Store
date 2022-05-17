@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+    Result    
+{% endblock %}
+{% block content %}
+    
+<section class="text-gray-600 body-font">
+
+    <div class="container d-flex justify-content-center mt-50 mb-50">
+      <div class="row">
+
+        {% if schoolResult=="0" %}
+          <h1>No Book</h1>
+        {% endif %}
+        
+        {% for item in schoolResult %}
+        <div class="col-md-4 mt-2">
+          <div class="card-body">
+            <a href="/{{item[0]}}__school_books">
+              <div class="card-img-actions block relative h-52 rounded overflow-hidden"> <img
+                src="\static\img\sellerImg\{{item[10]}}" class="card-img img-fluidX h-48 block" alt=""> </div>
+            </a>
+          </div>
+          <div class="card-body bg-light text-center">
+            <div class="mb-2">
+              <h6 class="font-weight-semibold mb-1"> <a href="/{{item[0]}}__school_books" class="text-gray-700 hover:text-gray-900 " data-abc="true">{{ item[1] }}</a> </h6> <a href="/{{item[0]}}__school_books" class="text-muted" data-abc="true">{{ item[2] }} Book Published by : {{ item[6] }}</a>
+          <div class="card">
+          </div>
+          <h3 class="mb-0 font-weight-semibold">{{ item[5] }}₹</h3>
+              <div> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i
+                  class="fa fa-star star"></i> </div>
+              <div class="text-muted mb-3">34 reviews</div> <button type="button"
+                class="text-purple-700 hover:text-white border border-purple-900 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900"><i
+                  class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+            </div>
+          </div>
+        </div>
+        
+        {% endfor %}    
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
